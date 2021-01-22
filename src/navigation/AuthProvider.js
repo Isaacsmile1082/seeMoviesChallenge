@@ -1,6 +1,5 @@
 import React, { createContext, useState } from 'react'
 import firebase from '../database/firebase';
-import Loading from '../screens/helpers/Loading'
 export const AuthContext = createContext(); 
 
 const AuthProvider = ({children}) => {
@@ -16,9 +15,10 @@ const AuthProvider = ({children}) => {
             setLoading,
             login: async (email, password) => {
                 try {
-                    
+
                     setLoading(true);
-                    await firebase.auth().signInWithEmailAndPassword(email, password);                    
+                    await firebase.auth().signInWithEmailAndPassword(email, password);
+                                      
                 } catch (error) {
                     console.log(error.code);
                     console.log(error.message);

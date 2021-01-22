@@ -3,7 +3,6 @@ import { View, Image, ImageBackground } from 'react-native';
 import { TextInput, Button, Text, StyleSheet } from 'react-native-paper';
 import { useState } from 'react/cjs/react.development';
 import { AuthContext } from '../../navigation/AuthProvider';
-
 export default function Login({ navigation }) {
 
     const { login } = useContext(AuthContext);
