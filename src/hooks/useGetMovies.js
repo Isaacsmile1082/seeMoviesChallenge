@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getMovies } from '../helpers/getMovies';
 
-export const useGetMovies = ( orderBy, page ) => {
+export const useGetMovies = ( orderBy, page, pelis ) => {
 
     const [movies, setMovies] = useState([]);
     
@@ -10,8 +10,9 @@ export const useGetMovies = ( orderBy, page ) => {
         getMovies(orderBy, page)
             .then( movie => {
                 setTimeout(() => {
-                    setMovies(movie);
-                }, 500);
+                    setMovies(movie)
+                }, 1000);
+                
                 
             },[page, orderBy])        
         

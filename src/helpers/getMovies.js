@@ -11,10 +11,14 @@ export const getMovies = async ( orderBy, page ) => {
         const { results } = response.data;
         const movies = results.map( resultado => { 
             
+            
             return {
                 id: resultado.id,
                 poster_path: resultado.poster_path,
-                title: resultado.title
+                title: resultado.title,
+                vote_average: resultado.vote_average,
+                overview: resultado.overview,
+                release_date: resultado.release_date
             }
         });
         
@@ -23,3 +27,4 @@ export const getMovies = async ( orderBy, page ) => {
         console.log(error)
     }
 }
+
