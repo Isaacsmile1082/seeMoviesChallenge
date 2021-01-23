@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import { TextInput, Button, Text,  } from 'react-native-paper';
 
 const SignIn = ({ navigation }) => {
+    
     return (
 
         <View style={ { flex: 1,  } } >

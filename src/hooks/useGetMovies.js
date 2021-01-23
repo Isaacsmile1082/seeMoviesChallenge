@@ -6,15 +6,14 @@ export const useGetMovies = ( orderBy, page, pelis ) => {
     const [movies, setMovies] = useState([]);
     
     useEffect(() => { 
-
+        
         getMovies(orderBy, page)
             .then( movie => {
                 setTimeout(() => {
                     setMovies(movie)
-                }, 1000);
-                
-                
-            },[page, orderBy])        
+                }, 1000); 
+            })
+            .catch(e => console.log(e));        
         
     }, [page, orderBy])
 

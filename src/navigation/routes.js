@@ -9,12 +9,10 @@ import { NavigationContainer } from '@react-navigation/native';
 
 const Routes = () => {
 
-    
     const { user, setUser, loading, setLoading } = useContext(AuthContext);
     
     const [initializing, setInitializing] = useState(true);
 
-    
     function onAuthStateChanged(user) {
         setUser(user);
         if(initializing) setInitializing(false)
@@ -31,7 +29,6 @@ const Routes = () => {
     if(loading){
         return <Loading/>;
     }
-
 
     return (
        <NavigationContainer>

@@ -7,13 +7,8 @@ import { AuthContext } from '../../navigation/AuthProvider';
 export default function Login({ navigation }) {
 
     const { login } = useContext(AuthContext);
-
     const [email, setEmail] = useState('angeliss1082@gmail.com');
-
     const [password, setPassword] = useState('123456');
-
-    
-    
 
     return (
        

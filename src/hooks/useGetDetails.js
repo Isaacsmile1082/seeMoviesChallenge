@@ -7,10 +7,12 @@ export const useGetDetails = (id) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+
         getMovieDetail(id)
             .then( movie => {
                 setMovie(movie)
-            })        
+            })
+            .catch(e => console.log(e));        
        
     }, []);
    

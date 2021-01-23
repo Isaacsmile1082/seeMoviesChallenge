@@ -1,10 +1,11 @@
 import axios from 'axios';
 import { API_KEY_MOVIES } from '@env';
-
+import * as Localization from 'expo-localization';
+import i18n from 'i18n-js';
 
 export const getMovies = async ( orderBy, page ) => {
 
-    const url = `https://api.themoviedb.org/3/movie/${orderBy}?api_key=${API_KEY_MOVIES}&language=en-US&page=${page}`;
+    const url = `https://api.themoviedb.org/3/movie/${orderBy}?api_key=${API_KEY_MOVIES}&language=${i18n.locale}&page=${page}`;
     try {
         
         const response = await axios.get(url);
@@ -30,7 +31,7 @@ export const getMovies = async ( orderBy, page ) => {
 
 export const getMovieDetail = async (id) => {
 
-    const url = `https://api.themoviedb.org/3/movie/${ id }?api_key=${ API_KEY_MOVIES }&language=en-US`;
+    const url = `https://api.themoviedb.org/3/movie/${ id }?api_key=${ API_KEY_MOVIES }&language=${i18n.locale}`;
 
     try {
         
