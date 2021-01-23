@@ -15,7 +15,7 @@ const AuthProvider = ({children}) => {
             setLoading,
             login: async (email, password) => {
                 try {
-
+                    
                     setLoading(true);
                     await firebase.auth().signInWithEmailAndPassword(email, password);
                                       
