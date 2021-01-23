@@ -16,7 +16,7 @@ export const useGetMovies = ( orderBy, page, pelis ) => {
                 
             },[page, orderBy])        
         
-    })
+    }, [page, orderBy])
 
     return movies;
 }

@@ -24,7 +24,21 @@ export const getMovies = async ( orderBy, page ) => {
         
         return movies;
     } catch (error) {
-        console.log(error)
+        console.log(error); //handleError;
+    }
+}
+
+export const getMovieDetail = async (id) => {
+
+    const url = `https://api.themoviedb.org/3/movie/${ id }?api_key=${ API_KEY_MOVIES }&language=en-US`;
+
+    try {
+        
+        const response = await axios.get(url);
+        return response.data;
+            
+    } catch (error) {
+        console.log(error); // handle Error
     }
 }
 
