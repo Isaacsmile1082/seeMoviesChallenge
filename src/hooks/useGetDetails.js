@@ -9,13 +9,14 @@ export const useGetDetails = (id) => {
     useEffect(() => {
 
         getMovieDetail(id)
-            .then( movie => {
-                setMovie(movie)
+            .then( movieDB => {
+                setMovie(movieDB)
             })
             .catch(e => console.log(e));        
        
     }, []);
    
+    
     return movie;
 
 }
