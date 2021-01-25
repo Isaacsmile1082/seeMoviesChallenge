@@ -16,7 +16,8 @@ export const lenguages = {
           emptyInputs: 'Please complete the form',
           snackError: 'tap to see what went wrong',
           hideSnack: 'hide',
-          undo: 'undo'
+          undo: 'undo',
+          runTime: 'runtime: '
         },
     es: { login: 'Iniciar Sesión',
           logout: "Cerrar Sesión",
@@ -34,7 +35,8 @@ export const lenguages = {
           emptyInputs: 'Porfavor rellene el formulario',
           snackError: 'Presiona para ver que salio mal',
           hide: 'esconder',
-          undo: 'deshacer'
+          undo: 'deshacer',
+          runTime: 'duración: '
 
         },
   }

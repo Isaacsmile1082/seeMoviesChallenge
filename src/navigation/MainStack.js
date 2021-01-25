@@ -1,7 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Grid from '../screens/main/Grid';
-import { AuthContext } from './AuthProvider';
+
 import MovieInfo from '../screens/main/MovieInfo';
 const Stack = createStackNavigator();
 

@@ -5,7 +5,7 @@ import { getMovies } from '../helpers/getMovies';
 export const useGetMovies = ( orderBy, page, prevOrder, setPage ) => {
 
     const [movies, setMovies] = useState([]);
-    const [loading, setLoading] = useState(true);
+    
     
     useEffect(() => {
         
