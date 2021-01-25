@@ -6,6 +6,7 @@ const AuthProvider = ({children}) => {
     
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState();
+    const [error, setError] = useState({ error_code: '', error_message: '' });
     return (
        <AuthContext.Provider
         value={{
@@ -13,6 +14,8 @@ const AuthProvider = ({children}) => {
             setUser,
             loading,
             setLoading,
+            error,
+            setError,
             login: async (email, password) => {
                 try {
                     
@@ -20,8 +23,9 @@ const AuthProvider = ({children}) => {
                     await firebase.auth().signInWithEmailAndPassword(email, password);
                                       
                 } catch (error) {
-                    console.log(error.code);
-                    console.log(error.message);
+                    setError({error_code: error.code, error_message: error.message});
+                    console.log(error)
+                    setLoading(false); 
                 }
             },
             register: async (email, password) => {
@@ -33,6 +37,9 @@ const AuthProvider = ({children}) => {
                 } catch (error) {
                     console.log(error.code);
                     console.log(error.message);
+                    setLoading(false);
+                    setError({error_code: error.code, error_message: error.message});
+                    
                 }
             },
             logout: async () => {
@@ -44,8 +51,10 @@ const AuthProvider = ({children}) => {
                 } catch (error) {
                     console.log(error.code);
                     console.log(error.message);
+                    setError({error_code: error.code, error_message: error.message});
+                    setLoading(false);
                 }
-            }
+            },
         }
         }
        >

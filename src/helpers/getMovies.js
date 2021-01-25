@@ -6,8 +6,9 @@ import i18n from 'i18n-js';
 export const getMovies = async ( orderBy, page ) => {
 
     const url = `https://api.themoviedb.org/3/movie/${orderBy}?api_key=${API_KEY_MOVIES}&language=${i18n.locale}&page=${page}`;
+    
     try {
-        
+            
         const response = await axios.get(url);
         const { results } = response.data;
         const movies = results.map( resultado => { 

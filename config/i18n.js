@@ -6,7 +6,17 @@ export const lenguages = {
           signIn: 'Sing in',
           topRated: 'Top rated',
           popular: 'Popular',
-          emptyOverview: "Sorry there's no overview of this movie on your lenguage for now:("
+          emptyOverview: "Sorry there's no overview of this movie on your lenguage for now:(",
+          email: 'email',
+          password: 'password',
+          name: 'Name',
+          lastName: 'Last name',
+          errorEmail: 'Invalid email',
+          errorPassword: 'Invalid password',
+          emptyInputs: 'Please complete the form',
+          snackError: 'tap to see what went wrong',
+          hideSnack: 'hide',
+          undo: 'undo'
         },
     es: { login: 'Iniciar Sesión',
           logout: "Cerrar Sesión",
@@ -14,6 +24,17 @@ export const lenguages = {
           signIn: "Registrarse",
           topRated: "Mas valorados",
           popular: "Mas popular",
-          emptyOverview: 'Lo siento no hay una sinopsis de esta pelicula en tu idioma por ahora:('
+          emptyOverview: 'Lo siento no hay una sinopsis de esta pelicula en tu idioma por ahora:(',
+          email: 'Correo electrónico',
+          password: "Contraseña",
+          name: 'Nombre',
+          lastName: 'Apellidos',
+          errorEmail: 'correo no valido',
+          errorPassword: 'Formato de contraseña invalida',
+          emptyInputs: 'Porfavor rellene el formulario',
+          snackError: 'Presiona para ver que salio mal',
+          hide: 'esconder',
+          undo: 'deshacer'
+
         },
   }

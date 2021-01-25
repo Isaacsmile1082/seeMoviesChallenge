@@ -1,17 +1,37 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React, { useEffect, useState, useContext } from 'react'
+import { View, Text, SafeAreaView } from 'react-native'
 import { Appbar } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/SimpleLineIcons';
+import { AuthContext } from '../navigation/AuthProvider';
 
-const AppbarHeader = ({ title, subtitle, navigation }) => {
+
+
+const AppbarHeader = ({ subtitle, title, navigation }) => {
+
+    const [active, setActive] = useState('false');
+    const { logout } = useContext(AuthContext)
+
+    const handleLogin = () => {
+
+        setActive('true');
+        setTimeout(() => {
+            logout();
+        }, 100);
+    }
+
+
     return (
-        <View>
-            <Appbar.Header>
-                <Appbar.BackAction onPress={ () => navigation.goBack() }/>
-                <Appbar.Content title={ title } subtitle={subtitle} />
-                <Appbar.Action icon="magnify" />
-                <Appbar.Action icon="dots-vertical"/>
-            </Appbar.Header>
-        </View>
+      
+            <View style={{}}>
+                <Appbar.Header>
+                    <Appbar.Content title={ subtitle } subtitle={ title } />
+                    <Appbar.Action icon={() => <Icon name='logout' color='#fff' size={20}/>} onPress={handleLogin}/>            
+                </Appbar.Header>
+               
+            </View>
+      
+
+        
     )
 }
 

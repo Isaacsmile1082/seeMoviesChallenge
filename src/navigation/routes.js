@@ -9,18 +9,22 @@ import { NavigationContainer } from '@react-navigation/native';
 
 const Routes = () => {
 
-    const { user, setUser, loading, setLoading } = useContext(AuthContext);
+    const { user, setUser, loading, setLoading, setError } = useContext(AuthContext);
     
     const [initializing, setInitializing] = useState(true);
 
     function onAuthStateChanged(user) {
         setUser(user);
         if(initializing) setInitializing(false)
+        setError(null);
         setLoading(false);
     }
 
+    
+
     useEffect( () => {
         const subscriber = firebase.auth().onAuthStateChanged(onAuthStateChanged);
+        
         return subscriber;
     }, []);
 
